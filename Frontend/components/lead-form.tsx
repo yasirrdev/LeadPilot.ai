@@ -20,8 +20,10 @@ export function LeadForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000"
+
     try {
-      await fetch("http://localhost:8000/lead", {
+      await fetch(`${API_URL}/lead`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

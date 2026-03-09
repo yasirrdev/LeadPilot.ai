@@ -17,7 +17,7 @@ class Settings:
     APP_TITLE: str       = os.getenv("APP_TITLE", "LeadPilot AI")
     APP_VERSION: str     = os.getenv("APP_VERSION", "1.0.0")
     APP_ENV: str         = os.getenv("APP_ENV", "development")
-
+    ALLOWED_ORIGINS: str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
     # ── OpenAI ───────────────────────────────────────────────────────────
     OPENAI_API_KEY: str  = os.getenv("OPENAI_API_KEY", "")
     OPENAI_MODEL: str    = os.getenv("OPENAI_MODEL", "gpt-4o")

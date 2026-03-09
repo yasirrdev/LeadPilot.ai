@@ -55,10 +55,11 @@ app = FastAPI(
 # ── CORS ─────────────────────────────────────────────────────────────────────
 # For the live demo, allow all origins.
 # In production, replace ["*"] with your frontend domain(s).
+ALLOWED_ORIGINS = [o.strip() for o in settings.ALLOWED_ORIGINS.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
